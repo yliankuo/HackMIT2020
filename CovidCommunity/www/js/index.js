@@ -18,16 +18,23 @@ document.addEventListener('deviceready', onDeviceReady, false);
 // -----Functions Start-----
 function onDeviceReady() {
     LocalStorage.initialize();
+    window.FirebasePlugin.getToken(function(token){
+    	console.log(`Firebase ID: ${token}`);
+    	if(!LocalStorage.get("firebasetoken")){
+    		LocalStorage.set("firebasetoken",token);
+    	}
+    });
 }
 
 function submitCredentials(){
 	username = $('#username').text()
-	password = $('#password').text()
-
+	LocalStorage.set("username", username);
+	password = $('#password').text();
+	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
 
 
-	location.href = Constants.statPage;
+	location.href = "html/stats.html";
 }
 // -----Functions End-----
 
