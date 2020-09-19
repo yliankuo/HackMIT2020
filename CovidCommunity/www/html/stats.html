@@ -12,6 +12,7 @@
         <!-- Helper modules -->
         <script src="../js/constants.js"></script>
         <script src="../js/localstorage.js"></script>
+        <script src="../js/helper.js"></script>
         <script src="../cordova.js"></script>
 
         <!-- Main modules, set your own js here -->
@@ -52,26 +53,26 @@
         <!-- See "Firestore" section in https://www.npmjs.com/package/cordova-plugin-firebasex -->
         <!-- Also need to represent data in a meaningful manner (aka we need a lot of UI work on this page or we need a visualization plugin or api) -->
         <nav class="nav">
-          <a href="stats.html" class="nav__link nav__link--active">
+          <button onclick="Helper.changePage(Constants.statPage);" class="nav__link nav__link--active">
             <i class="material-icons nav__icon">insights</i>
             <span class="nav__text">Stats</span>
-          </a>
-          <a href="daily.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.dailyPage);" class="nav__link">
             <i class="material-icons nav__icon">equalizer</i>
             <span class="nav__text">Daily</span>
-          </a>
-          <a href="maps.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.mapPage);" class="nav__link">
             <i class="material-icons nav__icon">map</i>
             <span class="nav__text">Maps</span>
-          </a>
-          <a href="notif.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.notifPage);" class="nav__link">
             <i class="material-icons nav__icon">notifications</i>
             <span class="nav__text">Notif</span>
-          </a>
-          <a href="news.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.newsPage);" class="nav__link">
             <i class="material-icons nav__icon">inbox</i>
             <span class="nav__text">News</span>
-          </a>
+          </button>
         </nav>
     </body>
 </html>

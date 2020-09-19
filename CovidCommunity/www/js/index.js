@@ -34,7 +34,7 @@ function submitCredentials(){
 	//Do something here regarding login/firebase
 
 
-	location.href = Constants.statPage;
+	location.href = "html/stats.html";
 }
 // -----Functions End-----
 

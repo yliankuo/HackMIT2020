@@ -2,6 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+
         <!-- Links -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -12,6 +23,7 @@
         <!-- Helper modules -->
         <script src="../js/constants.js"></script>
         <script src="../js/localstorage.js"></script>
+        <script src="../js/helper.js"></script>
         <script src="../cordova.js"></script>
 
         <!-- Main modules, set your own js here -->
@@ -27,13 +39,50 @@
         <!-- Do your own css here -->
         <link rel="stylesheet" href="../css/daily.css">
         <link rel="stylesheet" href="../css/nav.css">
+        <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script> -->
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script> -->
+
+        <!-- Add Firebase products that you want to use -->
+<!--         <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script> -->
+
 
         <title>Covid Community</title>
     </head>
     <body>
         <div class="daily">
             <h1>Daily</h1>
-            <p>Create form for daily assessment here. Bort can link submission to firebase if need be.</p> 
+            <div id="form">
+                <h2 class="body-header">COVID-19 Self Assessment Form</h1>
+                <p>To your knowledge, in the past two weeks, have you had close contact with someone diagnosed with Covid-19? Required field <span>*</span> </p>
+                  <input class="form-check-input" type="radio" id="male" name="contact" value="Yes">
+                  <label for="Yes">Yes</label><br>
+                  <input class="form-check-input" type="radio" id="female" name="contact" value="No">
+                  <label for="No">No</label><br><br>
+                <p>Have you had any of these symptoms in the last 24 hours? Required field <span>*</span> </p>
+                  <input class="form-check-input"type="radio" id="male" name="symptoms" value="Yes">
+                  <label for="Yes">Yes</label><br>
+                  <input class="form-check-input" type="radio" id="female" name="symptoms" value="No">
+                  <label for="No">No</label><br><br>
+                <p>When you took your temperature today, was it 100.4 degrees Fahrenheit (38.0 degrees Celsius) or higher? Required field <span>*</span></p>
+                  <input class="form-check-input" type="radio" id="male" name="temperature" value="Yes">
+                  <label for="Yes">Yes</label><br>
+                  <input class="form-check-input" type="radio" id="female" name="temperature" value="No">
+                  <label for="No">No</label><br>
+                  <input class="form-check-input" type="radio" id="other" name="temperature" value="other">
+                  <label for="other">I didn't take my temperature today</label><br><br><br>
+                <button class="btn btn-primary" onclick="submit();">Submit</button>
+            </div>
+            <div id="answered">
+                <p>You've already filled out the assessment for today. Thank you so much for participating!</p>
+            </div>
         </div>
 
         <!-- Todo: Need navigation between pages-->
@@ -41,26 +90,26 @@
         <!-- Need to link results to firebase -->
         <!-- See "Firestore" section in https://www.npmjs.com/package/cordova-plugin-firebasex -->
         <nav class="nav">
-          <a href="stats.html" class="nav__link">
+          <button onclick="Helper.changePage(Constants.statPage);" class="nav__link">
             <i class="material-icons nav__icon">insights</i>
             <span class="nav__text">Stats</span>
-          </a>
-          <a href="daily.html" class="nav__link nav__link--active">
+          </button>
+          <button onclick="Helper.changePage(Constants.dailyPage);" class="nav__link nav__link--active">
             <i class="material-icons nav__icon">equalizer</i>
             <span class="nav__text">Daily</span>
-          </a>
-          <a href="maps.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.mapPage);" class="nav__link">
             <i class="material-icons nav__icon">map</i>
             <span class="nav__text">Maps</span>
-          </a>
-          <a href="notif.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.notifPage);" class="nav__link">
             <i class="material-icons nav__icon">notifications</i>
             <span class="nav__text">Notif</span>
-          </a>
-          <a href="news.html" class="nav__link">
+          </button>
+          <button onclick="Helper.changePage(Constants.newsPage);" class="nav__link">
             <i class="material-icons nav__icon">inbox</i>
             <span class="nav__text">News</span>
-          </a>
+          </button>
         </nav>
     </body>
 </html>
