@@ -32,6 +32,10 @@ body {
     background-color: white;
 }
 
+.nav__link:focus {
+    outline: none;
+}
+
 .nav__link:hover {
     background-color: #eeeeee;
 }
