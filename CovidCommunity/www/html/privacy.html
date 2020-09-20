@@ -12,7 +12,7 @@
         <script src="../cordova.js"></script>
 
         <!-- Main modules, set your own js here -->
-        <script src="../js/pages/privacy.js"></script>
+        <script src="../js/privacy.js"></script>
 
 
         <!-- Don't touch this -->
@@ -24,13 +24,30 @@
         <!-- Do your own css here -->
         <link rel="stylesheet" href="../css/privacy.css">
 
-        <title>Covid Community</title>
+        <title>Privacy</title>
     </head>
     <body>
-        <div class="privacy">
-            <h1>Privacy</h1>
-            <p>This is a paragraph about how important privacy is and our privacy policy</p> 
+        <h1 class="title">Privacy Policy</h1>
+        <p class = "data">
+            Our contact tracing solution takes your personal data and privacy very seriously. This page is meant to inform you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+        </p>
+        <h2 class="location">1. Location Data</h2>
+        <p class = "data">
+             We collect geolocation and movement data as an opt-out feature to update our system-wide database while your app is running as a background process. This is done to keep our safety and community reports as accurate as possible, allowing us to keep up with potential contact between users and high-risk factors.
+            Personal tracking data is processed and deleted nightly, while </p>
+        <h2 class="health">2. Health Information</h2>
+        <p class = "data">
+            Any health records you submit through the app are used to validate your current health status, and any extraneous information associated with your records are not saved. We recommend you only submit test results and no documents containing sensitive information.
+        </p>
+        <h2 class="disclosure">3. Disclosure of Data</h2>
+        <p class = "data">
+            We do not disclose your data to anyone, period. All data is anonymized and stored for at most 30 days to account for the average viral infectious period, and all stored data is deleted after the 30 day period.
+        </p>
+        <div style="height:20px;">
         </div>
+        <button onclick="submitCredentials();  return false;" class = "btn">Accept</button><button class = "btn">Decline</button>
+
+
 
         <!-- Todo: Need navigation confirming/privacy agreement -->
         <!-- Also need this page to be loaded on first time startup by initial user (Bort will do this) -->
