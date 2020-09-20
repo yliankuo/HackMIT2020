@@ -1,16 +1,5 @@
 let map, heatmap;
 
-$("#btn").click(function(){
-  var geocoder =  new google.maps.Geocoder();
-  geocoder.geocode( { 'address': 'miami, us'}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      alert("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng()); 
-    } else {
-      alert("Something got wrong " + status);
-    }
-  });
-});
-
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
@@ -21,6 +10,16 @@ function initMap() {
     data: getPoints(),
     map: map
   });
+}
+
+function parseJSON() {
+  url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
+  covidData = Papa.parse(url, {
+    download: true,
+  });
+
+  data = JSON.stringify(covidData, null, 2);
+  console.log(data);
 }
 
 // Heatmap data: 500 Points
