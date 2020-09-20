@@ -34,9 +34,11 @@
     background-color: white;
     margin-top: 10px;
     border-left: solid;
-    border-left-color: #1de9b6;
+    /*border-left-color: #1de9b6;*/
+    border-left-color: #8b0000;
     border-left-width: 3px;
-    background-color: #e1f5f0;
+    background-color: #f7dada;
+    /*background-color: #e1f5f0;*/
     /*box-shadow: 0 0 5px #cef2e9;*/
 }
 
@@ -86,8 +88,10 @@ p span {
   color: #fff;
   /*background-color: #007bff;*/
   /*border-color: #007bff;*/
-  background-color: #12cc9e;
-  border-color: #12cc9e;
+  /*background-color: #12cc9e;*/
+  /*border-color: #12cc9e;*/
+  background-color: #8b0000;
+  border-color: #8b0000;
 }
 
 body {

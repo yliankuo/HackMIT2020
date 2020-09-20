@@ -60,7 +60,8 @@ body {
 
 .notif__cta {
     color: white;
-    background-color: #12cc9e;
+    /*background-color: #12cc9e;*/
+    background-color: #8b0000;
     border-radius: 8px;
     padding: 10px;
     text-decoration: none;
