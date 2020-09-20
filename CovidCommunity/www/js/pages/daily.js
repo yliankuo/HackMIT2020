@@ -1,16 +1,3 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyC5bX38mIe6wFMWFLyiVZpKQpeBVx8gjWE",
-    authDomain: "fleet-diagram-290007.firebaseapp.com",
-    databaseURL: "https://fleet-diagram-290007.firebaseio.com",
-    projectId: "fleet-diagram-290007",
-    storageBucket: "fleet-diagram-290007.appspot.com",
-    messagingSenderId: "961698630902",
-    appId: "1:961698630902:web:1e9e23ed8469f0d28ab0d7",
-    measurementId: "G-HRW5TJ8BPN"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
 var db = firebase.firestore();
 
 function submit() {
@@ -36,9 +23,11 @@ function submit() {
 	db.collection("DailyForms").doc(todayID).set({
 		"contact": result[0],
 		"symptoms": result[1],
-		"temperature": result[2]
+		"temperature": result[2],
+		"comment": document.getElementById("comment").value
 	})
 	.then(function() {
+		document.getElementById("comment").value = ""
 	    console.log("Document successfully written!");
 	})
 	.catch(function(error) {
@@ -51,12 +40,10 @@ function submitLocation() {
 	if(document.getElementById("location").value != "") {
 		var id = LocalStorage.get("firebasetoken");
 		db.collection("LocationInformation").doc(id).set({
-			"location": document.getElementById("location").value,
-			"comment": document.getElementById("comment").value
+			"location": document.getElementById("location").value
 		})
 		.then(function() {
 			document.getElementById("location").value = ""
-			document.getElementById("comment").value = ""
 		    console.log("Document successfully written!");
 		})
 		.catch(function(error) {
