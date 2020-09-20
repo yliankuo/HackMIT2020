@@ -67,14 +67,15 @@ function initMap() {
   heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
   heatmap.set("radius", heatmap.get("radius") ? null : 25);
 
-  monroeville = {lat: 40.4211798, lng: -79.7881024}
-  freeport = {"lat" : 40.6739543,"lng" : -79.6847703}
-  clinton = {"lat" : 40.4913949,
-  "lng" : -80.2973027}
-  greentree = {"lat" : 40.415251,
-  "lng" : -80.05222839999999}
-  starjunction = {"lat" : 40.07096019999999,
-  "lng" : -79.74785039999999}
+  monroeville = {"lat": 40.4211798, "lng": -79.7881024}
+  freeport = {"lat" : 40.6739543, "lng" : -79.6847703}
+  clinton = {"lat" : 40.4913949, "lng" : -80.2973027}
+  greentree = {"lat" : 40.415251, "lng" : -80.05222839999999}
+  starjunction = {"lat" : 40.07096019999999, "lng" : -79.74785039999999}
+
+  var hospital1 = {"lat" : 40.4548396, "lng" : -79.9391194}
+  var hospital2 = {"lat" : 40.2643514802915, "lng" : -80.13376381970851}
+  var hospitalIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Hospital%20Icon%20.png?raw=true"
 
   var brandonMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%201.png?raw=true"
   var alexMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%202.png?raw=true"
@@ -82,11 +83,14 @@ function initMap() {
   var kishanMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%204.png?raw=true"
   var mattMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%205.png?raw=true"
 
-  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon", icon: brandonMarkerIcon});
-  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex", icon: alexMarkerIcon});
-  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian", icon: ianMarkerIcon});
-  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan", icon: kishanMarkerIcon});
-  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto", icon: mattMarkerIcon});
+  var hospital1Marker = new google.maps.Marker({position: hospital1, map: map, title: "Hospital 1", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var hospital1Marker = new google.maps.Marker({position: hospital2, map: map, title: "Hospital 2", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(50, 50)}});
+
+  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon", icon: {url: brandonMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex", icon: {url: alexMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian", icon: {url: ianMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan", icon: {url: kishanMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto", icon: {url: mattMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
 
   google.maps.event.addListener(brandon, 'click', handleBrandonLogic);
   google.maps.event.addListener(alex, 'click', handleAlexLogic);
