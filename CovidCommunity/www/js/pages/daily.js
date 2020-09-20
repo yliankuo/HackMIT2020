@@ -17,7 +17,7 @@ function submit() {
 	// var defaultFirestore = defaultProject.firestore();
 	var collection = "DailyForms";
 	var d = new Date();
-	var todayID = LocalStorage.get("firebasetoken");
+	var todayID = LocalStorage.get("firebasetoken") + "_"  + d.getMonth() + "_" + d.getDate() + "_" d.getFullYear();
 	console.log(todayID)
 	// Option 2: Access Firebase services using shorthand notation
 	// defaultStorage = firebase.storage();
@@ -38,7 +38,7 @@ function submit() {
 
 function submitLocation() {
 	if(document.getElementById("location").value != "") {
-		var id = "ayxqXISY6SK1ph5OZEV2";
+		var id = LocalStorage.get("firebasetoken");
 		db.collection("LocationInformation").doc(id).set({
 			"location": document.getElementById("location").value,
 			"comment": document.getElementById("comment").value
