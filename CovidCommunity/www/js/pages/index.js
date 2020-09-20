@@ -18,7 +18,7 @@ function onDeviceReady() {
 
 function submitCredentials(){
 	username = $('#username').text()
-	password = $('password').text()
+	password = $('#password').text()
 
 	//Do something here regarding login/firebase
 
