@@ -1,9 +1,10 @@
 * {
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #F0F0F0;
+    background-color: #eeeeee;
     padding-bottom: 10px;
 }
 

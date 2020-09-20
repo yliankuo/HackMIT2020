@@ -1,18 +1,4 @@
-/**
- * JS code for the index.html page in the application.
- */	
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-apiKey: "AIzaSyC5bX38mIe6wFMWFLyiVZpKQpeBVx8gjWE",
-authDomain: "fleet-diagram-290007.firebaseapp.com",
-databaseURL: "https://fleet-diagram-290007.firebaseio.com",
-projectId: "fleet-diagram-290007",
-storageBucket: "fleet-diagram-290007.appspot.com",
-messagingSenderId: "961698630902",
-appId: "1:961698630902:web:1e9e23ed8469f0d28ab0d7",
-measurementId: "G-HRW5TJ8BPN"
-};
+
 
 // -----Local variable declaration start-----
 // If you want to pass variables between scripts use LocalStorage
@@ -46,8 +32,8 @@ function onDeviceReady() {
     		LocalStorage.set("firebasetoken",token);
     	}
     });
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+
+    console.log("on ready intialized")
 }
 
 function submitCredentials(){
