@@ -75,11 +75,18 @@ function initMap() {
   "lng" : -80.05222839999999}
   starjunction = {"lat" : 40.07096019999999,
   "lng" : -79.74785039999999}
-  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon"});
-  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex"});
-  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian"});
-  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan"});
-  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto"});
+
+  var brandonMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%201.png?raw=true"
+  var alexMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%202.png?raw=true"
+  var ianMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%203.png?raw=true"
+  var kishanMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%204.png?raw=true"
+  var mattMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%205.png?raw=true"
+
+  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon", icon: brandonMarkerIcon});
+  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex", icon: alexMarkerIcon});
+  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian", icon: ianMarkerIcon});
+  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan", icon: kishanMarkerIcon});
+  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto", icon: mattMarkerIcon});
 
   google.maps.event.addListener(brandon, 'click', handleBrandonLogic);
   google.maps.event.addListener(alex, 'click', handleAlexLogic);
