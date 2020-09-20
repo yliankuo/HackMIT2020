@@ -6,7 +6,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 55px;
+    height: 7.5vh;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     display: flex;
@@ -71,4 +71,17 @@ body {
   direction: ltr;
   -moz-font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;
+}
+
+.title{
+    font-size: 28px;
+    width: 100%;
+    height: 7.5vh;
+    margin: 0;
+    background-color: #8b0000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

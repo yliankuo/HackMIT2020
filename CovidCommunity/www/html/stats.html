@@ -7,7 +7,7 @@
 
         <!-- Library modules(JQuery) -->
         <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-        <script src="../js/lib/snap.svg-min.js"></script>
+        <script src="../js/lib/snap-svg-min.js"></script>
         <!-- Helper modules -->
         <script src="../js/constants.js"></script>
         <script src="../js/localstorage.js"></script>
@@ -15,13 +15,13 @@
         <script src="../cordova.js"></script>
 
         <!-- Main modules, set your own js here -->
-        <script src="../js/pages/stats.js"></script>
+        <script src="../js/pages/stats.js" defer></script>
 
 
         <!-- Don't touch this -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="viewport" user-scalable=no content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="white">
 
         <!-- Do your own css here -->
@@ -31,21 +31,38 @@
     </head>
     <body>
         <div class="stats">
-            <h1>Statistics</h1>
-            <p>Load information from Firebase/Local Storage regarding risk rates for self, close friends, close encounters, regional data, highly infected areas you've been too</p> 
-		<div class = "rates">
-			<div id = "daily"> 
-				Daily
-			</div>  
-
-			<div id = "weekly">  
-				Weekly
-			</div> 
-
-			<div id = "monthly"> 
-				Monthly
-			</div>
-		</div>
+            <h1 class = "title">Statistics</h1>
+            <div class = "top">
+                <div id = "selfriskmodel">
+                    <figure>
+                        <figcaption id = "figcap">Daily Risk</figcaption>
+                        <img id = "covidbg" src="../img/covidbg.png">
+                        <img id = "covidfg" src="../img/covidfg.png">
+                        <figcaption id = "figval">60%</figcaption>
+                    </figure>
+                </div>
+                <div id = "region">
+                   State Covid Cases
+                </div>
+            </div>
+            <div id = "bot">
+                <nav id = "graphnav">
+                    <button onclick="makeGraph('risks');" class = "nav__link">
+                        <i class="material-icons nav__icon">report_problem</i>
+                        <span class="nav__text">Risks</span>
+                    </button>
+                    <button onclick="makeGraph('encounter');" class = "nav__link">
+                        <i class="material-icons nav__icon">sick</i>
+                        <span class="nav__text">Encounters</span>
+                    </button>
+                        <button onclick="makeGraph('heatmap');" class = "nav__link">
+                        <i class="material-icons nav__icon">directions_walk</i>
+                        <span class="nav__text">Heatmap</span>
+                    </button>
+                    </nav>
+                </div>
+                <div id = "graph"></div>
+            </div> 
 		  
         <!-- Todo: Need navigation between pages-->
         <!-- Need to load data from Firebase -->

@@ -103,6 +103,9 @@ docRef.get().then(function(doc) {
         setNotAnswered();
         console.log("Haven't Submitted");
     }
+    if(LocalStorage.get("trackLocation")){
+    	document.getElementById('private-form').style.display = "none"
+    }
 }).catch(function(error) {
     console.log("Error getting document:", error);
 });

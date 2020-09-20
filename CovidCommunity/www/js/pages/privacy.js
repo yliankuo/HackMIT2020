@@ -8,8 +8,8 @@ function onDeviceReady() {
     LocalStorage.initialize();
 }
 
-function submitCredentials(){
-
+function submitCredentials(v){
+	LocalStorage.set("trackLocation",v);
     //Do something here regarding login/firebase
     location.href = Constants.statPage;
 }

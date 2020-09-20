@@ -2,41 +2,111 @@
     font-family: sans-serif;
 }
 
-.rates {
-    background-color:gray;
+body {
     margin: auto;
+    background: #eeeeee;
 }
-h1 {
-    /*text-align: center;*/
-    font-size: 28px;
+.top{
+    display:flex;
+    height:25vh;
+}
+
+
+.selfrisk{
+    border-radius: 10px;
+    margin: 2%;
+    position: relative;
+    background: white;
     width: 100%;
-    height: 60px;
-    margin: 0;
-    background-color: #8b0000;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 25vh;
+}
+
+/*First Panel Start*/
+#selfriskmodel{
+    width: 45%;
+    background: white;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 24vh;
+    border-radius: 10px;
+    margin-bottom: 8%;
+}
+
+#covidbg{
+    position: absolute;
+    width:35%;
+    top: 12%;
+    left:7%;
+    margin-bottom:2%;
+}
+#covidfg{
+    position: absolute;
+    width:35%;
+    top: 12%;
+    left:7%;
+    clip:rect(0px,150px,65px,0px);
+    margin-bottom:2%;
+}
+
+#figcap{
+    vertical-align: middle;
+    color: black;
     text-align: center;
 }
 
-#daily { 
-    float:left;  
-    width:33%; 
-    text-align:center;
-    border-right: black 1px solid;
-} 
-#weekly{ 
-    float:left;  
-    width: 33%; 
-    height:280px; 
-    text-align:center;
-    border-right: black 1px solid;
-    border-left: black 1px solid;
-} 
-#monthly{ 
-    float:right; 
-    width:33%; 
-    text-align:center;
-    border-left: black 1px solid;
+#figval{
+    color: white;
+    position:absolute;
+    top: 22%;
+    left:21%;
 }
+
+/*First Panel End*/
+
+
+/*Second Panel Start*/
+#region{
+    text-align: center;
+    flex:1;
+    padding-top: 2%;
+    background: white;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-right: 2%;
+    border-radius: 10px;
+    margin-bottom: 8%;
+    height:23vh;
+}
+
+/*Second Panel End*/
+
+/*Third Panel Start*/
+#bot{
+    margin-top:2vh;
+    background:white;
+    width:96%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#graphnav{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+    height:7.5vh;
+    margin-bottom: 1vh;
+      justify-content: center;
+  align-items: center;
+}
+
+#graph{
+    float:left;
+    width:96%;
+    height:50vh;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+
