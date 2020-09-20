@@ -115,9 +115,13 @@ function handleBrandonLogic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleAlexLogic() {
@@ -125,9 +129,13 @@ function handleAlexLogic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleKishanLogic() {
@@ -135,9 +143,13 @@ function handleKishanLogic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleIanLogic() {
@@ -145,9 +157,13 @@ function handleIanLogic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleMattLogic() {
@@ -155,9 +171,13 @@ function handleMattLogic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleH1Logic() {
@@ -165,9 +185,13 @@ function handleH1Logic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 function handleH2Logic() {
@@ -175,9 +199,13 @@ function handleH2Logic() {
 
   for (y of friends) {
     y.style.display = "none";
+    y.style.opacity = 0;
   }
   
   x.style.display = "block";
+  setTimeout(function () {
+       x.style.opacity = 1;
+   }, 1);
 }
 
 // Surrounding county data (Allegheny)

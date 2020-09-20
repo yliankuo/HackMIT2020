@@ -42,7 +42,8 @@ body {
 
 .nav__link--active {
     /*color: #009578;*/
-    color: #8b0000;
+    /*color: #8b0000;*/
+    color: #c2402a;
 }
 
 .nav__icon {

@@ -71,32 +71,47 @@
 	margin-top: 5px;
 	font-size: 14px;
 	border-radius: 8px;
+	transition: opacity 1s ease-in-out;
 }
 
 #brandon {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #alex {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #ian {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #kishan {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #matt {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #hospital1 {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #hospital2 {
-  display: none
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
