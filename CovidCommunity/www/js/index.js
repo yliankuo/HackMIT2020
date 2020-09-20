@@ -43,7 +43,9 @@ function submitCredentials(){
 	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
 	location.href = "html/" + Constants.statPage;
+  console.log("html/" + Constants.statPage);
 	console.log("bort bad")
+	console.log(location.href);
 }
 
 // -----Functions End-----

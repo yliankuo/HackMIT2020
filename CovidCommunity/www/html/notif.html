@@ -29,10 +29,80 @@
         <title>Covid Community</title>
     </head>
     <body>
-        <div class="notif">
-            <h1>Notifications</h1>
-            <p>Load notifications regarding risk updates. Generate recommendations on behavior (i.e. shopping) based on Google Mobility results</p> 
+
+        <!-- Exposures Panel -->
+        <div class="exposures">
+            <div style="height:140rem;">
+            </div>
+            <div class="exposure__notif">
+                <div class = "notif__info">
+                    <div class="notif__date">
+                        <span>September 19 2020, 8:00</span>
+                    </div>
+                    <h1 class="notif__title">Direct Exposure Report</h1>
+                    <p class="notif__text">
+                        You spent at least 15 minutes today near someone who reported a positive for Covid-19. It is possible that they were potentially contagious and we recommend that you monitor your symptoms for the next few days or visit a Covid testing site if possible. 
+                    </p>
+                    <a href="#" class="notif__cta">View nearby sites</a>
+                </div>
+            </div>
+            <div class="exposure__notif">
+                <div class = "notif__info">
+                    <div class="notif__date">
+                        <span>September 17 2020, 6:00</span>
+                    </div>
+                    <h1 class="notif__title">Indirect Exposure Report</h1>
+                    <p class="notif__text">
+                        You spent at least 15 minutes today near someone who was in contact with an individual that reported covid positive. We recommend that you monitor your symptoms for the next few days.
+                    </p>
+                    <a href="#" class="notif__cta">Ok</a>
+                </div>
+            </div>
         </div>
+
+
+        <!-- Recommendations Panel -->
+        <div class="recommendations">
+            <div style="height:50rem;">
+            </div>
+            <div class="rec__notif">
+                <div class = "rec__info">
+                    <div class="rec__date">
+                        <span>September 19 2020, 8:00</span>
+                    </div>
+                    <h1 class="notif__title">High Risk Area</h1>
+                    <p class="notif__text">
+                        You're near a high risk area for Covid, we recommend you stay indoors and practice social distancing if you go out.
+                    </p>
+                    <a href="#" class="notif__cta">Ok</a>
+                </div>
+            </div>
+            <div class="rec__notif">
+                <div class = "rec__info">
+                    <div class="rec__date">
+                        <span>September 11 2020, 8:00</span>
+                    </div>
+                    <h1 class="notif__title">High Risk Activities</h1>
+                    <p class="notif__text">
+                        Did you know, more people in PA shop for groceries on Wednesdays according to Google Mobility? It might be better to avoid shopping today or practice social distancing if you do.
+                    </p>
+                    <a href="#" class="notif__cta">Ok</a>
+                </div>
+            </div>
+            <div class="rec__notif">
+                <div class = "rec__info">
+                    <div class="rec__date">
+                        <span>September 11 2020, 8:00</span>
+                    </div>
+                    <h1 class="notif__title">Daily Assessment Reminder</h1>
+                    <p class="notif__text">
+                        Have you done your daily assessment today? It helps health services and your community keep track of potential Covid cases.
+                    </p>
+                    <a href="#" class="notif__cta">Ok</a>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Todo: Need navigation between pages -->
         <!-- Need method of communication between Firebase and app client-->
