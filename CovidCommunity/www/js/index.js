@@ -27,9 +27,9 @@ function onDeviceReady() {
 }
 
 function submitCredentials(){
-	username = $('#username').text()
+	username = document.getElementById("username").textContent;
 	LocalStorage.set("username", username);
-	password = $('#password').text();
+	password = document.getElementById("password").textContent;
 	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
 
