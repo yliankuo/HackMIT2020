@@ -13,7 +13,8 @@ body {
 
 
 .selfrisk{
-    border-radius: 10px;
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);*/
     margin: 2%;
     position: relative;
     background: white;
@@ -23,12 +24,13 @@ body {
 
 /*First Panel Start*/
 #selfriskmodel{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     width: 45%;
     background: white;
     margin-left: 2%;
     margin-top: 2%;
     height: 24vh;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin-bottom: 8%;
 }
 
@@ -73,7 +75,8 @@ body {
     margin-left: 2%;
     margin-top: 2%;
     margin-right: 2%;
-    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    /*border-radius: 10px;*/
     margin-bottom: 8%;
     height:23vh;
 }
@@ -101,6 +104,7 @@ body {
 }
 
 #graph{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     float:left;
     width:96%;
     height:50vh;
