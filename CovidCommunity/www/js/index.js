@@ -5,7 +5,17 @@
 // -----Local variable declaration start-----
 // If you want to pass variables between scripts use LocalStorage
 
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
 
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
 
 // -----Local variable declaration end-----
 
@@ -32,9 +42,9 @@ function submitCredentials(){
 	password = document.getElementById("password").textContent;
 	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
-
-
-	location.href = "html/stats.html";
+	location.href = "html/" + Constants.statPage;
+	console.log("bort bad")
 }
+
 // -----Functions End-----
 
