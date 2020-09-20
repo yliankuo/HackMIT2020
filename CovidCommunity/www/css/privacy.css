@@ -22,7 +22,6 @@ h1 {
 }
 .data {
     margin: 10px;
-
 }
 p {
     line-height: 2 ;
@@ -30,7 +29,19 @@ p {
 
 .btn {
     margin: 5px;
+    width: 150px;
+    background-color: #700000;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    left: 20%;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    position: relative;
+
 }
