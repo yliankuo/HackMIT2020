@@ -1,0 +1,25 @@
+.rates {
+    background-color:gray;
+    margin: auto;
+}
+
+#daily { 
+    float:left;  
+    width:33%; 
+    text-align:center;
+    border-right: black 1px solid;
+} 
+#weekly{ 
+    float:left;  
+    width: 33%; 
+    height:280px; 
+    text-align:center;
+    border-right: black 1px solid;
+    border-left: black 1px solid;
+} 
+#monthly{ 
+    float:right; 
+    width:33%; 
+    text-align:center;
+    border-left: black 1px solid;
+}

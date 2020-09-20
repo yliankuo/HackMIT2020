@@ -28,16 +28,28 @@ sign_in_btn.addEventListener("click", () => {
 // -----Functions Start-----
 function onDeviceReady() {
     LocalStorage.initialize();
+    window.FirebasePlugin.getToken(function(token){
+    	console.log(`Firebase ID: ${token}`);
+    	if(!LocalStorage.get("firebasetoken")){
+    		LocalStorage.set("firebasetoken",token);
+    	}
+    });
 }
 
 function submitCredentials(){
-	username = $('#username').text()
-	password = $('#password').text()
-
+	username = document.getElementById("username").textContent;
+	LocalStorage.set("username", username);
+	password = document.getElementById("password").textContent;
+	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
 
 
+<<<<<<< HEAD
 	location.href = Constants.statPage;
 }*/
+=======
+	location.href = "html/stats.html";
+}
+>>>>>>> 653f94ac845bd7f21436d76688b4dc169719f08d
 // -----Functions End-----
 
