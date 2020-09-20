@@ -1,4 +1,15 @@
-// firebase.analytics();
+var firebaseConfig = {
+    apiKey: "AIzaSyC5bX38mIe6wFMWFLyiVZpKQpeBVx8gjWE",
+    authDomain: "fleet-diagram-290007.firebaseapp.com",
+    databaseURL: "https://fleet-diagram-290007.firebaseio.com",
+    projectId: "fleet-diagram-290007",
+    storageBucket: "fleet-diagram-290007.appspot.com",
+    messagingSenderId: "961698630902",
+    appId: "1:961698630902:web:1e9e23ed8469f0d28ab0d7",
+    measurementId: "G-HRW5TJ8BPN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 var db = firebase.firestore();
 
@@ -17,7 +28,7 @@ function submit() {
 	// var defaultFirestore = defaultProject.firestore();
 	var collection = "DailyForms";
 	var d = new Date();
-	var todayID = LocalStorage.get("firebasetoken") + "_"  + d.getMonth() + "_" + d.getDate() + "_" d.getFullYear();
+	var todayID = LocalStorage.get("firebasetoken") + "_"  + d.getMonth() + "_" + d.getDate() + "_" + d.getFullYear();
 	console.log(todayID)
 	// Option 2: Access Firebase services using shorthand notation
 	// defaultStorage = firebase.storage();
@@ -71,7 +82,7 @@ function setNotAnswered() {
 
 // var defaultFirestore = defaultProject.firestore();
 var d = new Date();
-var todayID = LocalStorage.get("firebasetoken");
+var todayID = LocalStorage.get("firebasetoken") + "_"  + d.getMonth() + "_" + d.getDate() + "_" + d.getFullYear();
 console.log(todayID)
 var col = "DailyForms";
 var docRef = db.collection(col).doc(todayID);
@@ -79,8 +90,8 @@ var docRef = db.collection(col).doc(todayID);
 docRef.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
-        // setAlreadyAnswered();
-        setNotAnswered();
+        setAlreadyAnswered();
+        // setNotAnswered();
     } else {
         // doc.data() will be undefined in this case
         setNotAnswered();
