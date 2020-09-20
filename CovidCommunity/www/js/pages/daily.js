@@ -50,6 +50,24 @@ function submit() {
 	
 }
 
+function submitLocation() {
+	if(document.getElementById("location").value != "") {
+		var id = "ayxqXISY6SK1ph5OZEV2";
+		db.collection("LocationInformation").doc(id).set({
+			"location": document.getElementById("location").value,
+			"comment": document.getElementById("comment").value
+		})
+		.then(function() {
+			document.getElementById("location").value = ""
+			document.getElementById("comment").value = ""
+		    console.log("Document successfully written!");
+		})
+		.catch(function(error) {
+		    console.error("Error writing document: ", error);
+		});
+	}
+}
+
 function setAlreadyAnswered() {
 	var form = document.getElementById('form');
 	form.style.display = "none";
@@ -75,8 +93,8 @@ var docRef = db.collection(col).doc(todayID);
 docRef.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
-        setAlreadyAnswered();
-        // setNotAnswered();
+        // setAlreadyAnswered();
+        setNotAnswered();
     } else {
         // doc.data() will be undefined in this case
         setNotAnswered();
