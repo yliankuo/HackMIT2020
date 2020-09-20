@@ -1,5 +1,9 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+*{
+  font-family: sans-serif;
+}
+
 #map {
   height: 35vh;
   width: calc(100vw-20px);
