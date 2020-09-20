@@ -41,8 +41,15 @@ function submitCredentials(){
 	LocalStorage.set("username", username);
 	password = document.getElementById("password").textContent;
 	LocalStorage.set("password", username);
-	//Do something here regarding login/firebase
+	var firstlogin = LocalStorage.get('firstlogin');
+	if(firstlogin == false){
+		LocalStorage.set("firstlogin", true);
+		console.log("borty");
+		location.href = "html/" + Constants.privacyPage;
+	}
+	 //Do something here regarding login/firebase
 	location.href = "html/" + Constants.statPage;
+
 }
 
 // -----Functions End-----
