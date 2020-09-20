@@ -54,29 +54,39 @@
     </head>
     <body>
         <div class="daily">
+            <!-- <div class="background-color"></div> -->
             <h1>Daily</h1>
             <div id="form">
-                <h2 class="body-header">COVID-19 Self Assessment Form</h1>
-                <p>To your knowledge, in the past two weeks, have you had close contact with someone diagnosed with Covid-19? Required field <span>*</span> </p>
+                <!-- <h2 class="body-header">COVID-19 Self Assessment Form</h1> -->
+                <div class="question">
+                    <p>To your knowledge, in the past two weeks, have you had close contact with someone diagnosed with Covid-19? <span>*</span></p>
                   <input class="form-check-input" type="radio" id="male" name="contact" value="Yes">
                   <label for="Yes">Yes</label><br>
                   <input class="form-check-input" type="radio" id="female" name="contact" value="No">
-                  <label for="No">No</label><br><br>
-                <p>Have you had any of these symptoms in the last 24 hours? Required field <span>*</span> </p>
-                  <input class="form-check-input"type="radio" id="male" name="symptoms" value="Yes">
-                  <label for="Yes">Yes</label><br>
-                  <input class="form-check-input" type="radio" id="female" name="symptoms" value="No">
-                  <label for="No">No</label><br><br>
-                <p>When you took your temperature today, was it 100.4 degrees Fahrenheit (38.0 degrees Celsius) or higher? Required field <span>*</span></p>
-                  <input class="form-check-input" type="radio" id="male" name="temperature" value="Yes">
-                  <label for="Yes">Yes</label><br>
-                  <input class="form-check-input" type="radio" id="female" name="temperature" value="No">
-                  <label for="No">No</label><br>
-                  <input class="form-check-input" type="radio" id="other" name="temperature" value="other">
-                  <label for="other">I didn't take my temperature today</label><br><br><br>
+                  <label for="No">No</label>
+                </div>
+                <div class="question">
+                    <p>Have you had any of these symptoms in the last 24 hours? <span>*</span> </p>
+                      <input class="form-check-input"type="radio" id="male" name="symptoms" value="Yes">
+                      <label for="Yes">Yes</label><br>
+                      <input class="form-check-input" type="radio" id="female" name="symptoms" value="No">
+                      <label for="No">No</label>
+                </div>
+                <div class="question">
+                    <p>When you took your temperature today, was it 100.4 degrees Fahrenheit (38.0 degrees Celsius) or higher? <span>*</span></p>
+                      <input class="form-check-input" type="radio" id="male" name="temperature" value="Yes">
+                      <label for="Yes">Yes</label><br>
+                      <input class="form-check-input" type="radio" id="female" name="temperature" value="No">
+                      <label for="No">No</label><br>
+                      <input class="form-check-input" type="radio" id="other" name="temperature" value="other">
+                      <label for="other">I didn't take my temperature today</label>
+                </div>
+                <p id="footnote"><span>*</span> = Required fields </p>
+                <br>
                 <button class="btn btn-primary" onclick="submit();">Submit</button>
             </div>
-            <div id="answered">
+            <!-- <div id="answered"> -->
+            <div class="question" id="answered">
                 <p>You've already filled out the assessment for today. Thank you so much for participating!</p>
             </div>
         </div>

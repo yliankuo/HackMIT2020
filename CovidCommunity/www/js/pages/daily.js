@@ -57,6 +57,13 @@ function setAlreadyAnswered() {
 	done.style.display = "block";
 }
 
+function setNotAnswered() {
+	var form = document.getElementById('form');
+	form.style.display = "block";
+	var done = document.getElementById('answered');
+	done.style.display = "none";
+}
+
 
 // var defaultFirestore = defaultProject.firestore();
 var d = new Date();
@@ -69,13 +76,16 @@ docRef.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
         setAlreadyAnswered();
+        // setNotAnswered();
     } else {
         // doc.data() will be undefined in this case
+        setNotAnswered();
         console.log("Haven't Submitted");
     }
 }).catch(function(error) {
     console.log("Error getting document:", error);
 });
+
 
 
 // var d = new Date();
