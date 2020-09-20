@@ -32,7 +32,11 @@ function onDeviceReady() {
     		LocalStorage.set("firebasetoken",token);
     	}
     });
-
+    window.FirebasePlugin.subscribe("global", function(){
+      console.log("Subscribed to topic");
+    }, function(error){
+      console.error("Error subscribing to topic: " + error);
+    });
     console.log("on ready intialized")
 }
 
