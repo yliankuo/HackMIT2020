@@ -1,4 +1,4 @@
-let map, heatmap;
+let map, heatmap, friends;
 
 function initMap() {
   var styles = [
@@ -12,14 +12,6 @@ function initMap() {
       ]
     },
     {
-      "featureType": "administrative_area_level_2",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        { "visibility": "on" },
-        { "weight": 2.5 },
-        { "color": "#24b0e2" }
-      ]
-    },{
       "featureType": "road",
       "elementType": "geometry",
       "stylers": [
@@ -83,12 +75,79 @@ function initMap() {
   "lng" : -80.05222839999999}
   starjunction = {"lat" : 40.07096019999999,
   "lng" : -79.74785039999999}
-  var marker1 = new google.maps.Marker({position: monroeville, map: map, title: "Chickennn"});
-  var marker2 = new google.maps.Marker({position: freeport, map: map, title: "Kishannn"});
-  var marker3 = new google.maps.Marker({position: clinton, map: map, title: "Kishannn"});
-  var marker4 = new google.maps.Marker({position: greentree, map: map, title: "Kishannn"});
-  var marker5 = new google.maps.Marker({position: starjunction, map: map, title: "Kishannn"});
+  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon"});
+  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex"});
+  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian"});
+  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan"});
+  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto"});
 
+  google.maps.event.addListener(brandon, 'click', handleBrandonLogic);
+  google.maps.event.addListener(alex, 'click', handleAlexLogic);
+  google.maps.event.addListener(kishan, 'click', handleKishanLogic);
+  google.maps.event.addListener(ian, 'click', handleIanLogic);
+  google.maps.event.addListener(matt, 'click', handleMattLogic);
+
+  friends = [
+    document.getElementById("brandon"),
+    document.getElementById("alex"),
+    document.getElementById("kishan"),
+    document.getElementById("ian"),
+    document.getElementById("matt")
+  ]
+}
+
+function nullDisplay(x) {
+  x.style.display = "none"
+}
+
+function handleBrandonLogic() {
+  x = friends[0];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleAlexLogic() {
+  x = friends[1];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleKishanLogic() {
+  x = friends[2];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleIanLogic() {
+  x = friends[3];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleMattLogic() {
+  x = friends[4];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
 }
 
 // Surrounding county data (Allegheny)
