@@ -3,6 +3,7 @@ var LocalStorage = {
 	  },
 
 initialize: function() {
+  console.log("initialized")
     for (key in this.DEFAULT_SETTINGS) {
       if (this.get(key) == null) this.set(key, this.DEFAULT_SETTINGS[key]);
     }
@@ -38,6 +39,4 @@ initialize: function() {
   },
 
 }
-
-LocalStorage.initialize();
 

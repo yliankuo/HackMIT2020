@@ -1,17 +1,3 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-apiKey: "AIzaSyC5bX38mIe6wFMWFLyiVZpKQpeBVx8gjWE",
-authDomain: "fleet-diagram-290007.firebaseapp.com",
-databaseURL: "https://fleet-diagram-290007.firebaseio.com",
-projectId: "fleet-diagram-290007",
-storageBucket: "fleet-diagram-290007.appspot.com",
-messagingSenderId: "961698630902",
-appId: "1:961698630902:web:1e9e23ed8469f0d28ab0d7",
-measurementId: "G-HRW5TJ8BPN"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
 var db = firebase.firestore();
@@ -31,8 +17,8 @@ function submit() {
 	// var defaultFirestore = defaultProject.firestore();
 	var collection = "DailyForms";
 	var d = new Date();
-	var todayID = "ayxqXISY6SK1ph5OZEV2_" + d.getMonth() + "_" + d.getDate() + "_" + d.getFullYear();
-
+	var todayID = LocalStorage.get("firebasetoken");
+	console.log(todayID)
 	// Option 2: Access Firebase services using shorthand notation
 	// defaultStorage = firebase.storage();
 	// defaultFirestore = firebase.firestore();
@@ -85,7 +71,7 @@ function setNotAnswered() {
 
 // var defaultFirestore = defaultProject.firestore();
 var d = new Date();
-var todayID = "ayxqXISY6SK1ph5OZEV2_" + d.getMonth() + "_" + d.getDate() + "_" + d.getFullYear();
+var todayID = LocalStorage.get("firebasetoken");
 console.log(todayID)
 var col = "DailyForms";
 var docRef = db.collection(col).doc(todayID);
