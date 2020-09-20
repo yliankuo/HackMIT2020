@@ -21,7 +21,7 @@ sign_in_btn.addEventListener("click", () => {
 
 
 // -----Listeners Start-----
-/*document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', onDeviceReady, false);
 
 // -----Listeners End-----
 
@@ -42,14 +42,9 @@ function submitCredentials(){
 	password = document.getElementById("password").textContent;
 	LocalStorage.set("password", username);
 	//Do something here regarding login/firebase
-
-
-<<<<<<< HEAD
-	location.href = Constants.statPage;
-}*/
-=======
-	location.href = "html/stats.html";
+	location.href = "html/" + Constants.statPage;
+	console.log("bort bad")
 }
->>>>>>> 653f94ac845bd7f21436d76688b4dc169719f08d
+
 // -----Functions End-----
 

@@ -3,30 +3,26 @@
     <head>
         <meta charset="utf-8">
 
-<<<<<<< HEAD
+
 
         <!-- Library modules(JQuery) -->
         <script src="lib/jquery-2.2.4.min.js"></script>
         <script src="lib/jquery.mobile-1.4.5.min.js"></script>
 
-=======
->>>>>>> 653f94ac845bd7f21436d76688b4dc169719f08d
+
         <!-- Helper modules -->
         <script src="js/constants.js"></script>
         <script src="js/localstorage.js"></script>
         <script src="cordova.js"></script>
 
         <!-- Main modules, set your own js here -->
-<<<<<<< HEAD
+
 <!--        <script src="js/pages/index.js"></script>-->
         <script
             src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"
         ></script>
 
-=======
-        <script src="js/index.js"></script>
->>>>>>> 653f94ac845bd7f21436d76688b4dc169719f08d
 
 <!--         Don't touch this -->
 <!--        <meta name="format-detection" content="telephone=no">-->
@@ -46,30 +42,16 @@
                 <div class="signin-signup">
                     <form action="#" class="sign-in-form">
                         <h2 class="title">Sign in</h2>
-                        <div class="input-field">
+                        <div class="input-field" id = "username">
                             <i class="fas fa-user"></i>
                             <input type="text" placeholder="Username" />
                         </div>
-                        <div class="input-field">
+                        <div class="input-field" id = "password">
                             <i class="fas fa-lock"></i>
                             <input type="password" placeholder="Password" />
                         </div>
                         <input type="submit" value="Login" class="btn" />
-                        <p class="social-text">Or Sign in with social platforms</p>
-                        <div class="social-media">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-google"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+                        <button onclick="submitCredentials();">Login</button>
                     </form>
                     <form action="#" class="sign-up-form">
                         <h2 class="title">Sign up</h2>
@@ -86,25 +68,9 @@
                             <input type="password" placeholder="Password" />
                         </div>
                         <input type="submit" class="btn" value="Sign up" />
-                        <p class="social-text">Or Sign up with social platforms</p>
-                        <div class="social-media">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-google"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
                     </form>
                 </div>
             </div>
-
             <div class="panels-container">
                 <div class="panel left-panel">
                     <div class="content">
@@ -117,7 +83,6 @@
                             Sign up
                         </button>
                     </div>
-
                 </div>
                 <div class="panel right-panel">
                     <div class="content">
@@ -130,7 +95,6 @@
                             Sign in
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
