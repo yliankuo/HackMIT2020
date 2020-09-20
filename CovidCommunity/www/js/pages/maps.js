@@ -35,8 +35,11 @@ function initMap() {
   ];
 
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 8.5,
     scaleControl: false,
+    draggable: true,
+    fullscreenControl: false,
+    streetViewControl: false,
     styles:styles,
     center: { lat: 40.4450813, lng: -80.0087746 },
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -45,27 +48,23 @@ function initMap() {
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map,
-    opacity: 0.8
+    opacity: 1
   });
 
   const gradient = [
-    "rgba(0, 255, 255, 0)",
-    "rgba(0, 255, 255, 1)",
-    "rgba(0, 191, 255, 1)",
-    "rgba(0, 127, 255, 1)",
-    "rgba(0, 63, 255, 1)",
-    "rgba(0, 0, 255, 1)",
-    "rgba(0, 0, 223, 1)",
-    "rgba(0, 0, 191, 1)",
-    "rgba(0, 0, 159, 1)",
-    "rgba(0, 0, 127, 1)",
-    "rgba(63, 0, 91, 1)",
-    "rgba(127, 0, 63, 1)",
-    "rgba(191, 0, 31, 1)",
-    "rgba(255, 0, 0, 1)"
-  ];
+  "rgba(102, 215, 0, 0)",
+  "rgba(20, 215, 0, 1)",
+  "rgba(40, 215, 0, 1)",
+  "rgba(60, 215, 0, 1)",
+  "rgba(80, 215, 0, 1)",
+  "rgba(110, 190, 0, 1)",
+  "rgba(130, 198, 0, 1)",
+  "rgba(154, 170, 0, 1)",
+  "rgba(164, 113, 0, 1)",
+  "rgba(163, 57, 0, 1)",
+  "rgba(163, 0, 0, 1)"];
   heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
-  heatmap.set("radius", heatmap.get("radius") ? null : 25);
+  heatmap.set("radius", heatmap.get("radius") ? null : 30);
 
   monroeville = {"lat": 40.4211798, "lng": -79.7881024}
   freeport = {"lat" : 40.6739543, "lng" : -79.6847703}
@@ -75,7 +74,7 @@ function initMap() {
 
   var hospital1 = {"lat" : 40.4548396, "lng" : -79.9391194}
   var hospital2 = {"lat" : 40.2643514802915, "lng" : -80.13376381970851}
-  var hospitalIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Hospital%20Icon%20.png?raw=true"
+  var hospitalIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Hospital%20Icon.png?raw=true"
 
   var brandonMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%201.png?raw=true"
   var alexMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%202.png?raw=true"
@@ -83,32 +82,32 @@ function initMap() {
   var kishanMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%204.png?raw=true"
   var mattMarkerIcon = "https://github.com/yliankuo/HackMIT2020/blob/master/CovidCommunity/www/img/Map%20Marker%205.png?raw=true"
 
-  var hospital1Marker = new google.maps.Marker({position: hospital1, map: map, title: "Hospital 1", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(50, 50)}});
-  var hospital1Marker = new google.maps.Marker({position: hospital2, map: map, title: "Hospital 2", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var hospital1Marker = new google.maps.Marker({position: hospital1, map: map, title: "Hospital 1", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(40, 40)}});
+  var hospital2Marker = new google.maps.Marker({position: hospital2, map: map, title: "Hospital 2", icon: {url: hospitalIcon, scaledSize: new google.maps.Size(40, 40)}});
 
-  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon", icon: {url: brandonMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
-  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex", icon: {url: alexMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
-  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian", icon: {url: ianMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
-  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan", icon: {url: kishanMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
-  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto", icon: {url: mattMarkerIcon, scaledSize: new google.maps.Size(50, 50)}});
+  var brandon = new google.maps.Marker({position: monroeville, map: map, title: "Brandon", icon: {url: brandonMarkerIcon, scaledSize: new google.maps.Size(40, 40)}});
+  var alex = new google.maps.Marker({position: freeport, map: map, title: "Alex", icon: {url: alexMarkerIcon, scaledSize: new google.maps.Size(40, 40)}});
+  var ian = new google.maps.Marker({position: clinton, map: map, title: "Ian", icon: {url: ianMarkerIcon, scaledSize: new google.maps.Size(40, 40)}});
+  var kishan = new google.maps.Marker({position: greentree, map: map, title: "Kishan", icon: {url: kishanMarkerIcon, scaledSize: new google.maps.Size(40, 40)}});
+  var matt = new google.maps.Marker({position: starjunction, map: map, title: "Matt DeSoto", icon: {url: mattMarkerIcon, scaledSize: new google.maps.Size(40, 40)}});
 
   google.maps.event.addListener(brandon, 'click', handleBrandonLogic);
   google.maps.event.addListener(alex, 'click', handleAlexLogic);
   google.maps.event.addListener(kishan, 'click', handleKishanLogic);
   google.maps.event.addListener(ian, 'click', handleIanLogic);
   google.maps.event.addListener(matt, 'click', handleMattLogic);
+  google.maps.event.addListener(hospital1Marker, 'click', handleH1Logic);
+  google.maps.event.addListener(hospital2Marker, 'click', handleH2Logic);
 
   friends = [
     document.getElementById("brandon"),
     document.getElementById("alex"),
     document.getElementById("kishan"),
     document.getElementById("ian"),
-    document.getElementById("matt")
+    document.getElementById("matt"),
+    document.getElementById("hospital1"),
+    document.getElementById("hospital2")
   ]
-}
-
-function nullDisplay(x) {
-  x.style.display = "none"
 }
 
 function handleBrandonLogic() {
@@ -153,6 +152,26 @@ function handleIanLogic() {
 
 function handleMattLogic() {
   x = friends[4];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleH1Logic() {
+  x = friends[5];
+
+  for (y of friends) {
+    y.style.display = "none";
+  }
+  
+  x.style.display = "block";
+}
+
+function handleH2Logic() {
+  x = friends[6];
 
   for (y of friends) {
     y.style.display = "none";
